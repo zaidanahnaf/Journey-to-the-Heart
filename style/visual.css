@@ -1,0 +1,30 @@
+.surprise-bubble {
+    position: absolute;
+    top: 70%; 
+    left: 62%;
+    color: brown;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+}
+
+.speech-bubble {
+    align-items: center;
+    color: brown;
+    justify-content: center;
+    width: 32px !important;
+    height: 32px !important;
+    display: flex;
+
+}
+
+.exclamation-mark {
+    width: 16px !important;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    top: 20px; 
+}

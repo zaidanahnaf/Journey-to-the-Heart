@@ -1,0 +1,56 @@
+#wordDuelGame {
+    background: rgba(0, 0, 0, 0.8);
+    border: 3px solid #ffcc00;
+    padding: 20px;
+    width: 50%;
+    margin: auto;
+    margin-top: 10%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.8);
+}
+
+#wordList {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+#timer {
+    font-size: 20px;
+    color: #ff5733;
+}
+
+input[type="text"] {
+    font-family: 'Press Start 2P', cursive;
+    border: 2px solid #ffcc00;
+    background: #222;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+button {
+    font-family: 'Press Start 2P', cursive;
+    background: #ff5733;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #ffcc00;
+    color: black;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px #ffcc00; }
+    50% { box-shadow: 0 0 20px #ffcc00; }
+    100% { box-shadow: 0 0 5px #ffcc00; }
+}
+
+#wordDuelGame {
+    animation: glow 1.5s infinite alternate;
+}

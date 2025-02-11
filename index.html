@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Journey to the Heart - Game</title>
+    <style>
+        @font-face {
+            font-family: 'virust';
+            src: url(/public/assets/fonts/VIRUST.ttf);
+        }
+        @font-face {
+            font-family: 'vcrOsdMono';
+            src: url(/public/assets/fonts/VCR_OSD_MONO_1.001.ttf);
+        }
+        #gameTitle {
+            position: relative;
+            left: -10px;
+            top: -40px;
+            margin-right: 30%;
+            margin-bottom: 35%;
+        }
+
+        .mainTitle {
+            font-family: 'virust';
+            font-size: 5.5vh;
+            background: -webkit-linear-gradient(#D72233, #f56775);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke-width: 0.1px;
+            -webkit-text-stroke-color: #D72233;
+        }
+
+        .baseLines {
+            font-family: 'vcrOsdMono';
+            margin-top: -25px;
+            font-style: italic;
+            font-size: 20px;
+
+        }
+
+        .audio {
+            margin-top: 1000px;
+        }
+
+        @media screen and (max-width: 828px) {
+            .mainTitle {
+                margin-top: 20px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="/style/main.css">
+    <link rel="stylesheet" href="/style/miniGame.css">
+</head>
+<body>
+    <audio style="opacity: 0%; position: absolute;" controls autoplay loop>
+        <source src="/public/assets/sounds/flyMeToTheMoon.mp3" type="audio/mpeg">
+    </audio>
+    <div id="gameTitle">
+        <h1 class="mainTitle" style="text-align: center;">
+            Journey to the Heart
+        </h1>
+        <p class="baseLines" style="text-align: center;">
+            "Heartlines: A Tale of Understanding"
+        </p>
+    </div>
+    <div id="canvasContainer">
+            <!-- Canvas untuk cutscene -->
+        <canvas id="cutsceneCanvas"></canvas>   
+        <!-- Canvas untuk sali
+        <canvas id="spriteSali"></canvas> -->
+        <!-- Canvas untuk dhafa-->
+        <canvas id="spriteDhafa"></canvas>
+    </div>
+    <div id="contentContainer" style="text-align: center;">
+        <!-- Tombol Start Game -->
+    </div>
+        <!-- <audio controls autoplay muted loop>
+            <source src="/public/assets/sounds/likeHim.mp3" type="audio/mpeg">
+        </audio> -->
+        <!-- <button id="playMusic">&#9658;</button>
+        &nbsp;
+        &nbsp;
+        <buton onclick="stopMusic">&#9611;</buton> -->
+    </div>
+
+    <!-- Linking to external JS files -->
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/cutscene.js"></script>
+    <script type="module" src="/src/spriteAnimation.js"></script>
+
+</body>
+</html>

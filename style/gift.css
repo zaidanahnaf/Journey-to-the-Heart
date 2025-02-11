@@ -1,0 +1,315 @@
+#giftContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 110vh;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+/* ----- Surat Sebelum Dibuka ----- */
+#paperLayer {
+    position: absolute;
+    top: 100px;
+    width: 450px;
+    height: 300px;
+    background: url("../public/assets/gift/envelope.png") no-repeat center/contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.revealText {
+    position: relative;
+    margin-top: 300px;
+    font-size: 24px;
+}
+
+#paperLayer.opened {
+    transform: translateY(-120%) rotate(-10deg);
+    opacity: 0;
+}
+
+/* ----- Polaroid Foto Hadiah ----- */
+.photo-container {
+    perspective: 1000px;
+}
+
+.photo-card {
+    width: 500px;
+    height: 400px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    cursor: pointer;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.rotateText {
+    position: absolute;
+    color: #333;
+    margin-top: 370px;
+    font-size: 24px;
+}
+
+
+.photo-front,
+.photo-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 15px;
+}
+
+.photo-front {
+    transform: rotateY(0deg);
+}
+
+.photo-back {
+    transform: rotateY(180deg);
+    text-align: center;
+    font-size: 16px;
+    font-style: italic;
+    color: #444;
+}
+
+.photo-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.photo-back p {
+    margin-top: 10px;
+    font-size: 18px;
+    font-style: italic;
+    color: #333;
+}
+
+/* Tambahan teks di belakang polaroid */
+.photo-back::after {
+    content: "- 1 Februari 2025.";
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #777;
+}
+
+/* Efek saat surat dibuka */
+#paperLayer.opened {
+    transform: translateY(-120%) rotate(-10deg);
+    opacity: 0;
+}
+
+/* ----- Foto hadiah utama (lover.jpg) ----- */
+#photoPeek {
+    width: 520px; /* Sesuai dengan rasio 1041x692 */
+    height: auto;
+    display: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#photoPeek.peek-visible {
+    display: block;
+}
+
+/* Efek zoom saat diklik */
+#photoOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#photoOverlay.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+#photoZoom img {
+    width: 700px; /* Agar lebih besar saat zoom */
+    height: auto;
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+/* Efek rotasi untuk melihat bagian belakang */
+#photoZoom.rotated img {
+    transform: rotateY(180deg);
+}
+
+/* Tombol Tutup */
+#closePhoto {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background: white;
+    color: black;
+    transition: 0.3s;
+}
+
+#closePhoto:hover {
+    background: red;
+    color: white;
+}
+
+/* ----- Hadiah Gacha (keychain) ----- */
+#gachaPrize {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 300px;
+    height: 300px;
+    background: url("../public/assets/gift/keychain.png") no-repeat center/contain;
+    transition: transform 0.5s ease-in-out;
+    animation: prizeGlow 1.5s infinite alternate ease-in-out;
+}
+
+#gachaPrize.show {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Overlay untuk layar gacha */
+.gacha-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Saat gacha muncul */
+.gacha-overlay:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Box hadiah gacha */
+.gacha-box {
+    position: relative;
+    background: linear-gradient(135deg, #ffcc00, #ff8800);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgba(255, 204, 0, 0.8);
+    text-align: center;
+    animation: gachaPop 0.6s ease-out;
+    max-width: 350px;
+    width: 90%;
+}
+
+/* Animasi muncul */
+@keyframes gachaPop {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Judul gacha */
+.gacha-box h3 {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Animasi efek cahaya pada hadiah */
+@keyframes prizeGlow {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.5));
+    }
+    100% {
+        transform: scale(1.1);
+        filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 1));
+    }
+}
+
+/* Tombol close */
+#closeGacha {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background: white;
+    color: #ff6600;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+/* Efek hover pada tombol */
+#closeGacha:hover {
+    background: #ff6600;
+    color: white;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
+}
+
+/* Tombol X untuk menutup gacha */
+.close-x {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 25px;
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.close-x:hover {
+    background: white;
+    color: #ff5500;
+}
+

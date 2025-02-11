@@ -1,0 +1,82 @@
+#triviaGame {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    border: 3px solid #ffcc00;
+    padding: 20px;
+    width: 50%;
+    margin: auto;
+    margin-top: 10%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.8);
+}
+
+.game-title {
+    font-size: 24px;
+    color: #ffcc00;
+    text-shadow: 2px 2px 0px #ff6600;
+    margin-bottom: 20px;
+}
+
+.game-description {
+    font-size: 14px;
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+
+.question {
+    font-size: 16px;
+    background: #333;
+    padding: 10px;
+    border: 2px solid #ffcc00;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.choiceButton {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 14px;
+    background: #ffcc00;
+    border: 2px solid #ff6600;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.choiceButton:hover {
+    transform: scale(1.1);
+    background: #ff6600;
+    border: 2px solid #ffcc00;
+}
+
+.game-result {
+    font-size: 20px;
+    color: #ffcc00;
+    margin-top: 20px;
+    text-shadow: 2px 2px 5px rgba(255, 204, 0, 0.8);
+}
+
+.result-message {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.continue-button, .retry-button {
+    position: relative;
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.continue-button:hover, .retry-button:hover {
+    transform: scale(1.1);
+    /* background: #009900;
+    border: 2px solid #66ff66; */
+}

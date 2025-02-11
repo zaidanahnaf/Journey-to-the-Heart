@@ -1,0 +1,221 @@
+@font-face {
+    font-family: 'vcrOsdMono';
+    src: url(/public/assets/fonts/VCR_OSD_MONO_1.001.ttf);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    /* background: linear-gradient(180deg, #1c1f2a 0%, #283c24 100%); */
+    background-image: url(/public/assets/photo/minimartBG.svg);
+    background-size: cover;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #d4d7db;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+} */
+
+/* #gameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+#contentContainer {
+    top:0;
+    position: absolute;
+    margin: auto;
+    gap: 20px;
+    height: 80%;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    /* background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6); */
+}
+
+#startGameBtn {
+    font-family: 'vcrOsdMono';
+    padding: 20px;
+    width: 440px;
+    margin-top: 560px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 5vh;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition-duration: 0.3s;
+}
+
+#startGameBtn:hover {
+    background-color: #45a049;
+    scale: 1.2;
+}
+
+#gameCanvas {
+    max-width: 100%;
+    background-color: transparent;
+}
+
+#message {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
+
+#scoreDisplay {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#gameOverMessage {
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+    margin-top: 20px;
+}
+
+#retryButton {
+    position: relative;
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+#canvasContainer {
+    position: absolute; /* Sebagai anchor untuk absolute positioning */
+    margin-top: 315px;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+canvas {
+    position: relative;
+    display: grid;
+    left: 100px;
+    bottom: -10px;
+    margin-left: -80px;
+    margin-bottom: 60px;
+    max-width: 800px;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    width: 250px;
+    image-rendering: pixelated; /* Untuk tampilan pixel art yang crisp */
+    image-rendering: crisp-edges;
+}
+
+.spriteDhafa {
+    right: 0;
+    transform: translateY(0); /* Posisi default kanan */
+}
+
+.spriteSali {
+    left: 0;
+    transform: translateX(40px); /* Turun 40px dari posisi normal */
+}
+
+/* Responsive untuk layar 1024px (laptop lebih kecil) */
+@media screen and (max-width: 1024px) {
+    #contentContainer {
+        width: 90%;
+        height: 85%;
+    }
+    
+    #startGameBtn {
+        width: 360px;
+        font-size: 4vh;
+        margin-top: 500px;
+    }
+    
+    #canvasContainer {
+        margin-top: 330px;
+        padding: 15px;
+    }
+    
+    canvas {
+        width: 250px;
+        height: 250px;
+        left: 150px;
+        margin-left: -40px;
+        margin-bottom: 30px;
+    }
+    
+    .spriteDhafa, .spriteSali {
+        transform: translateX(20px);
+    }
+}
+
+/* Responsive untuk iPhone 11 (828px x 1792px) */
+@media screen and (max-width: 828px) {
+    body {
+        flex-direction: column;
+        padding: 10px;
+        height: auto;
+        overflow-y: auto;
+    }
+    
+    #contentContainer {
+        width: 95%;
+        height: auto;
+    }
+    
+    #startGameBtn {
+        width: 280px;
+        font-size: 3.5vh;
+        margin-top: 400px;
+    }
+    
+    #canvasContainer {
+        margin-top: 750px;
+        left: 400px;
+        padding: 10px;
+    }
+    
+    canvas {
+        width: 200px;
+        height: 200px;
+        left: 0;
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+    
+    .spriteDhafa, .spriteSali {
+        transform: translateX(10px);
+    }
+}

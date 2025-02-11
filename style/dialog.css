@@ -1,0 +1,159 @@
+/* CSS: dialog.css */
+/* body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #1a1a2e, #16213e, #0f3460);
+    color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+} */
+
+.dialog-container {
+    position: relative;
+    margin-top: 70%;
+    bottom: 10%;
+    width: 780px;
+    background: #f4ead5; /* Creamy brown color */
+    border: 2px solid #8c7851;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    display: flex;
+    align-items: flex-start;
+    overflow: hidden;
+    animation: slideInUp 0.5s ease;
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.character-avatar {
+    position: absolute;
+    margin-top: 38%;
+    flex: 0 0 80px;
+    max-width: 250px;
+    width: 220px;
+    height: 220px;
+    overflow: hidden;
+    animation: slideInUp 0.5s ease;
+}
+
+.character-avatar img {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    width: 100%;
+    height: auto;
+}
+
+#rightAvatar {
+    padding-left: 30px;
+    /* background-color: red; */
+    align-items: center;
+}
+
+#leftAvatar {
+    padding-right: 20px;
+    padding-left: 550px;
+    /* background-color: blue; */
+    align-items: center;
+}
+
+#dialogContainer {
+    flex: 1;
+    text-align: left;
+    font-size: 1rem;
+    color: #2d2d2d;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#characterName {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #404517;
+}
+
+@font-face {
+    font-family: 'vcrOsdMono';
+    src: url(/public/assets/fonts/VCR_OSD_MONO_1.001.ttf);
+}
+
+.dialog-text {
+    margin: 0;
+    line-height: 1.6;
+    font-family: 'vcrOsdMono';
+    font-size: 1rem;
+    color: #2d2d2d;
+}
+
+.dialog-options {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.dialog-button {
+    padding: 5px 15px;
+    background: #1a1a2e;
+    border: 1px solid #8c7851;
+    color: #f4ead5;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dialog-button:hover {
+    background: #8c7851;
+}
+
+.dialog-button:disabled {
+    background: #ccc;
+    color: #888;
+    cursor: not-allowed;
+}
+
+@media screen and (max-width: 828px) {
+    .dialog-container {
+        position: relative;
+        margin-top: 60%;
+        bottom: 10%;
+        width: 740px;
+        background: #f4ead5; /* Creamy brown color */
+        border: 2px solid #8c7851;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        padding: 15px;
+        display: flex;
+        align-items: flex-start;
+        overflow: hidden;
+        animation: slideInUp 0.5s ease;
+    }
+    .character-avatar {
+        position: absolute;
+        margin-top: 35%;
+        flex: 0 0 80px;
+        max-width: 200px;
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        animation: slideInUp 0.5s ease;
+    }
+    #leftAvatar {
+        padding-right: 20px;
+        padding-left: 540px;
+        /* background-color: blue; */
+        align-items: center;
+    }
+}

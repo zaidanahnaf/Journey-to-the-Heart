@@ -1,0 +1,26 @@
+/* Mengatur ukuran canvas untuk cutscene */
+#cutsceneCanvas {
+    position: absolute;
+    left: -470px;
+    bottom: -30px;
+    max-width: 1100px;
+    width: 820px; /* Sesuaikan dengan ukuran layar game */
+    height: 370px; /* Sesuaikan dengan kebutuhan */
+    display: block;
+    margin: 0 auto;
+    background-color: transparent; /* Bisa diganti sesuai kebutuhan */
+}
+
+@media screen and (max-width: 1024px) {
+    #cutsceneCanvas {
+        position: absolute;
+        left: -400px;
+        bottom: -50px;
+        max-width: 1100px;
+        width: 800px; /* Sesuaikan dengan ukuran layar game */
+        height: 350px; /* Sesuaikan dengan kebutuhan */
+        display: block;
+        margin: 0 auto;
+        background-color: transparent; /* Bisa diganti sesuai kebutuhan */
+    }
+}
