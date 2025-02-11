@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'vcrOsdMono';
-    src: url(../assets/fonts/VCR_OSD_MONO_1.001.ttf);
+    src: url(../public/assets/fonts/VCR_OSD_MONO_1.001.ttf);
 }
 
 body {
@@ -9,7 +9,7 @@ body {
     font-family: 'Press Start 2P', cursive;
     text-align: center;
     /* background: linear-gradient(180deg, #1c1f2a 0%, #283c24 100%); */
-    background-image: url(../assets/photo/minimartBG.svg);
+    background-image: url(../public/assets/photo/minimartBG.svg);
     background-size: cover;
     background-color: #1e1e1e;
     color: #ffffff;
