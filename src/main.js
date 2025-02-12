@@ -1,6 +1,6 @@
 import '../style/main.css';
 import '../style/dialog.css';
-import { showSurpriseBubble } from "./visual";
+import { showSurpriseBubble } from "./visual.js";
 import { startTextDialog } from './dialog.js';
 import { SpriteAnimator } from "./spriteAnimation.js";
 import { startMemoryPuzzle } from './miniGame1.js';
