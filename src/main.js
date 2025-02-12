@@ -140,7 +140,7 @@ function startSpriteAnimation() {
         //     menuSprite.currentTime = 0;
         // }
         // new SpriteAnimator('../public/assets/characters/dhafa2d.png', 23, 'spriteDhafa', 50);
-        new SpriteAnimator('../public/assets/characters/sali2d.png', 9, 'spriteSali', 150);
+        new SpriteAnimator('/public/assets/characters/sali2d.png', 9, 'spriteSali', 150);
         console.log("Sprite animation dimulai...");
     } catch (error) {
         console.error("Error saat memulai sprite animation:", error);
