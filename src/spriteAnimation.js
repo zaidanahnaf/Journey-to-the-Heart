@@ -54,7 +54,7 @@ export class SpriteAnimator {
 
 // Contoh penggunaan untuk 23 frame
 const animator23 = new SpriteAnimator(
-    '../public/assets/characters/dhafa2d.png', // Ganti dengan path gambar
+    '/public/assets/characters/dhafa2d.png', // Ganti dengan path gambar
     23,
     'spriteDhafa',
     80 // Delay lebih lambat untuk 23 frame
